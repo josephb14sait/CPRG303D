@@ -26,12 +26,16 @@ function App() {
     'Walk dog'
   ]);
 
+  const addTask = (taskText) => {
+    setTasks([...tasks, taskText]);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <ToDoList tasks={tasks} />
       </ScrollView>
-      <ToDoForm />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }
